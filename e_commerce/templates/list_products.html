@@ -77,24 +77,22 @@ ul li a.active {
     <th>stock</th>
     <th>Data Size</th>
   </tr>
-    {% for product in products %}
-  <tr>
-    <td>{{ product.name }}</td>
-
-    <td>
-      {% if product.image %}
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
-      {% else %}
-        <p>No image available</p>
-      {% endif %}
-    </td>
-
-    <td>{{ product.description }}</td>
-    <td>{{ product.price }}</td>
-    <td>{{ product.stock }}</td>
-    <td>{{ product.data_size_mb }} MB</td>
-  </tr>
-  {% endfor %}
+{% for product in products %}
+<tr>
+  <td>{{ product.name }}</td>
+  <td>
+    {% if product.image %}
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+    {% else %}
+      <p>No image available</p>
+    {% endif %}
+  </td>
+  <td>{{ product.description }}</td>
+  <td>{{ product.price }}</td>
+  <td>{{ product.stock }}</td>
+  <td>{{ product.data_size }} MB</td>
+</tr>
+{% endfor %}
 </table>
 
 </body>
